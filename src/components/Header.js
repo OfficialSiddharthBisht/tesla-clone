@@ -1,6 +1,7 @@
 import React from "react";
 import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 function Header(){
     return (
         <Container>
@@ -19,6 +20,9 @@ function Header(){
             <CustomMenu />
             </RightMenu>
             <BurgerNav>
+                <CloseWrapper>
+                    <CustomClose />
+                </CloseWrapper>
                 <li><a href = "#">Existing Inventory</a></li>
                 <li><a href = "#">Used Inventory</a></li>
                 <li><a href = "#">Used Inventory</a></li>
@@ -51,6 +55,7 @@ let Container = styled.div`
     top : 0;
     left : 0;
     right : 0;
+    z-index : 1;
 `
 let Menu = styled.div`
     display : flex;
@@ -87,4 +92,25 @@ let BurgerNav = styled.div`
     background : white;
     width : 300px;
     z-index : 100;
+    list-style : none;
+    padding : 20px;
+    display : flex;
+    flex-direction : column;
+    text-align :start;
+    
+    li{
+        padding : 9px 0;
+        border-bottom :1px solid rgba(0,0,0,0.2);
+    }
+    a{
+        font-weight : 600;
+    }
+`
+let CustomClose = styled(CloseIcon)`
+    top : 0;
+    right : 0;
+`
+let CloseWrapper = styled.div`
+    display : flex;
+    justify-content : flex-end;
 `
